@@ -17,10 +17,10 @@
 	],
 	"homepage": "https://github.com/ernilambar/database-command",
 	"require": {
-		"wp-cli/wp-cli": "^2.9"
+		"wp-cli/wp-cli": "^2.11"
 	},
 	"require-dev": {
-		"wp-cli/entity-command": "2.5",
+		"wp-cli/entity-command": "^2",
 		"wp-cli/scaffold-package-command": "^2",
 		"wp-cli/wp-cli-tests": "^4"
 	},
@@ -36,7 +36,8 @@
 	},
 	"config": {
 		"allow-plugins": {
-			"dealerdirect/phpcodesniffer-composer-installer": true
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"ergebnis/composer-normalize": true
 		},
 		"process-timeout": 7200,
 		"sort-packages": true
@@ -61,7 +62,7 @@
 		"phpcs": "run-phpcs-tests",
 		"phpunit": "run-php-unit-tests",
 		"prepare-tests": "install-package-tests",
-		"readme": "wp scaffold package-readme . --force",
+		"readme": "./vendor/bin/wp scaffold package-readme . --force",
 		"test": [
 			"@lint",
 			"@phpcs",
